@@ -7,6 +7,7 @@ import tech.bts.onlineshop.model.Product;
 import tech.bts.onlineshop.model.ShoppingCart;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class Example {
@@ -30,6 +31,30 @@ public class Example {
 
         int countApple = productDatabase.getCountByBrand("Apple");
         System.out.println("I have " + countApple + " Apple products");
+
+        List<Product> productsPriceRange = productDatabase.getByPriceRange(1000,1500);
+        System.out.println("You can by the following products " + productsPriceRange);
+
+        productDatabase.remove(2);
+
+        System.out.println("All products after removing: ");
+        Collection<Product> allProducts = productDatabase.getAll();
+        for (Product p : allProducts) {
+            System.out.println(p);
+        }
+
+        Product p4 = new Product("Lighting cable", "Apple", 10);
+        productDatabase.add(p4);
+
+        System.out.println("Number of products now: " + productDatabase.getCount());
+
+        long requestedId = 2;
+        Product requestedProduct = productDatabase.get(requestedId);
+        if (requestedProduct != null) {
+            System.out.println("The name of the product is: " + requestedProduct.getName());
+        }else{
+            System.out.println("The product with ID " + requestedId + " doesnt exist");
+        }
 
 
         List<Product> productsByApple = productDatabase.getByBrand("Apple");

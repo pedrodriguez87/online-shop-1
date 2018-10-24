@@ -7,15 +7,17 @@ public class Product {
     private String brand;
     private double price;
     private boolean available;
-
-    public final static long NOT_SPECIFIED = -1;
+    private double pricetwo;
+    public final static long NOT_SPECIFIED = 1;
 
     public Product(String name, String brand, double price) {
         this.id = NOT_SPECIFIED;
         this.name = name;
         this.brand = brand;
         this.price = price;
+        this.pricetwo= pricetwo;
         this.available = true;
+
     }
 
     @Override
