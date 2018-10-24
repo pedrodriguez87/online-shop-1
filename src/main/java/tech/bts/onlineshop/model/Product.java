@@ -6,8 +6,9 @@ public class Product {
     private String name;
     private String brand;
     private double price;
-    private boolean available;
     private double pricetwo;
+    private int quantity;
+
     public final static long NOT_SPECIFIED = 1;
 
     public Product(String name, String brand, double price) {
@@ -16,7 +17,7 @@ public class Product {
         this.brand = brand;
         this.price = price;
         this.pricetwo= pricetwo;
-        this.available = true;
+        this.quantity = 0;
 
     }
 
@@ -58,10 +59,21 @@ public class Product {
     }
 
     public boolean isAvailable() {
-        return available;
+
+        boolean b = this.quantity > 0;
+        if (this.quantity > 0){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
