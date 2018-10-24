@@ -1,9 +1,7 @@
 package tech.bts.onlineshop.business;
 
 import tech.bts.onlineshop.data.ProductDatabase;
-import tech.bts.onlineshop.model.CartItem;
 import tech.bts.onlineshop.model.Product;
-import tech.bts.onlineshop.model.ShoppingCart;
 
 public class ProductService {
 
@@ -13,8 +11,9 @@ public class ProductService {
         this.productDatabase = productDatabase;
     }
 
-    public void createProduct(Product product) {
-        this.productDatabase.add(product);
+    public long createProduct(Product product) {
+        long productId = this.productDatabase.add(product);
+        return productId;
 
     }
 
@@ -23,7 +22,11 @@ public class ProductService {
         Product product = this.productDatabase.get(productId);
         int total = product.getQuantity() + quantity;
         product.setQuantity(total);
-
     }
 
+    public Product getProductById(long productId) {
+        Product p = productDatabase.get(productId);
+        return p;
+
+    }
 }

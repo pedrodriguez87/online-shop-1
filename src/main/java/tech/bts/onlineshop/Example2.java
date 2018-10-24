@@ -11,18 +11,15 @@ public class Example2 {
         ProductDatabase productDatabase = new ProductDatabase();
 
         ProductService productService = new ProductService(productDatabase);
+        long iPhoneId = productService.createProduct(new Product("iPhone XS ","Apple", 1250));
+        long pixelId = productService.createProduct(new Product("Pixel 3 ","Google", 900));
 
-        Product p1 = new Product("Iphone X","Apple",1250);
-        Product p2 = new Product("Pixel 3","Google",900);
+        productService.addProductStock(iPhoneId, 100);
+        productService.addProductStock(iPhoneId, 200);
+        productService.addProductStock(pixelId, 150);
 
-
-
-        productService.createProduct(p1);
-
-        productService.addProductStock(1,100);
-        productService.addProductStock(1,200);
-        productService.addProductStock(2,150);
-
+        Product p = productService.getProductById(iPhoneId);
+        System.out.println("there are : " + p.getQuantity() + "units of " + p.getName() + "in stock");
 
     }
 }
