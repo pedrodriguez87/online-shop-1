@@ -1,5 +1,6 @@
 package tech.bts.onlineshop.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,6 +9,14 @@ import java.util.List;
 public class ShoppingCart {
 
     private List<CartItem> items;
+
+    public ShoppingCart() {
+        this.items = new ArrayList<>();
+    }
+
+    public void add(CartItem item) {
+        items.add(item);
+    }
 
     public ShoppingCart(List<CartItem> items) {
         this.items = items;

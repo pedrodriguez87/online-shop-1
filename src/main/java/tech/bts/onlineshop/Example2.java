@@ -2,7 +2,9 @@ package tech.bts.onlineshop;
 
 import tech.bts.onlineshop.business.ProductService;
 import tech.bts.onlineshop.data.ProductDatabase;
+import tech.bts.onlineshop.model.CartItem;
 import tech.bts.onlineshop.model.Product;
+import tech.bts.onlineshop.model.ShoppingCart;
 
 public class Example2 {
 
@@ -26,6 +28,19 @@ public class Example2 {
 
         int i = productService.quantityToDeliver(1,310);
         System.out.println("You can only buy: " + i + " products");
+
+        ShoppingCart cart = new ShoppingCart();
+
+        cart.add(new CartItem(iPhoneId, 20));
+        cart.add(new CartItem(pixelId, 50));
+
+        productService.purchase(cart);
+        Product iPhone = productService.getProductById(iPhoneId);
+        System.out.println("The amount of iphones available is: " + iPhone.getQuantity());
+
+        Product pixel = productService.getProductById(pixelId);
+        System.out.println("The amount of pixel available is: " + pixel.getQuantity());
+
 
     }
 }
