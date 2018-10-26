@@ -19,7 +19,13 @@ public class Example2 {
         productService.addProductStock(pixelId, 150);
 
         Product p = productService.getProductById(iPhoneId);
-        System.out.println("there are : " + p.getQuantity() + "units of " + p.getName() + "in stock");
+        System.out.println("there are : " + p.getQuantity() + " units of " + p.getName() + "in stock");
+
+        boolean b = productService.availableInStock(1,310);
+        System.out.println("Is it possible to buy the amount of products? " + b);
+
+        int i = productService.quantityToDeliver(1,310);
+        System.out.println("You can only buy: " + i + " products");
 
     }
 }

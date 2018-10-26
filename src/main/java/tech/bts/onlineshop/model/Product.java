@@ -9,6 +9,7 @@ public class Product {
     private double pricetwo;
     private int quantity;
 
+
     public final static long NOT_SPECIFIED = 1;
 
     public Product(String name, String brand, double price) {
@@ -18,6 +19,7 @@ public class Product {
         this.price = price;
         this.pricetwo= pricetwo;
         this.quantity = 0;
+
 
     }
 
