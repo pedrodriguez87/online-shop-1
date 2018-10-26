@@ -16,7 +16,10 @@ public class ProductService {
     public long createProduct(Product product) {
         long productId = this.productDatabase.add(product);
         return productId;
+    }
 
+    public int getCount() {
+        return productDatabase.getCount();
     }
 
     public void addProductStock(long productId, int quantity){
