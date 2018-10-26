@@ -39,11 +39,7 @@ public class ProductService {
     public int quantityToDeliver(long productId, int quantity) {
 
         Product product = this.productDatabase.get(productId);
-        if (product.getQuantity() > quantity){
-            return quantity;
-        }else{
-            return product.getQuantity();
-        }
+        return Math.min(product.getQuantity(), quantity);
 
     }
 }
