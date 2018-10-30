@@ -72,7 +72,6 @@ public class ProductDatabase {
         return result;
     }
 
-
     public int getCountByBrand(String brand) {
 
         List<Product> products = getByBrand(brand);

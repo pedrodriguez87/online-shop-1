@@ -1,8 +1,10 @@
 package tech.bts.onlineshop;
 
+import tech.bts.onlineshop.business.DiscountService;
 import tech.bts.onlineshop.business.ProductService;
 import tech.bts.onlineshop.data.ProductDatabase;
 import tech.bts.onlineshop.model.CartItem;
+import tech.bts.onlineshop.model.Discount;
 import tech.bts.onlineshop.model.Product;
 import tech.bts.onlineshop.model.ShoppingCart;
 
